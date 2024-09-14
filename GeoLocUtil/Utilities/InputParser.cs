@@ -1,8 +1,6 @@
 ﻿using GeoLocUtil.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace GeoLocUtil.Utilities
@@ -14,7 +12,9 @@ namespace GeoLocUtil.Utilities
             var locations = new List<LocationInputType>();
             var zipCodePattern = new Regex(@"^\d{5}$"); // regex pattern to identify ZIP codes)
 
-            foreach (var arg in args)
+            var arguments = args;
+
+            foreach (var arg in arguments)
             {
                 Console.WriteLine($"The input argument is: {arg}");
                 // check if input is zip pattern
@@ -28,11 +28,14 @@ namespace GeoLocUtil.Utilities
                 }
                 else
                 {
-                    locations.Add(new LocationInputType
+                    if (!string.IsNullOrEmpty(arg))
                     {
-                        Value = arg,
-                        IsZipCode = false
-                    });
+                        locations.Add(new LocationInputType
+                        {
+                            Value = arg,
+                            IsZipCode = false
+                        });
+                    }
                 }
             }
             return locations;

@@ -1,8 +1,5 @@
 ﻿using GeoLocUtil.Models;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GeoLocUtil.Services
@@ -49,7 +46,7 @@ namespace GeoLocUtil.Services
             }
 
             // if no data returned from the API, return error message 
-            return $"No data found for the given location: {location.Value}.";
+            return $"No data found for the given location: {location.Value}. Please enter valid US location.";
         }  
     }
 }

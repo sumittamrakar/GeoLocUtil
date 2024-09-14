@@ -20,7 +20,7 @@ namespace GeoLocUtil
             // if no arguments provided
             if (args.Length == 0)
             {
-                Console.WriteLine("Missing input: Please provide location inputs in the form of city, state or zipcode.");
+                Console.WriteLine("Missing input: Please provide location inputs in the form of valid 'city, state' or 'zipcode'.");
                 return;
             }
 
