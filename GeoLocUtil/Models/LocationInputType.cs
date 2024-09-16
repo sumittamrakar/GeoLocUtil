@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace GeoLocUtil.Models;
 
-namespace GeoLocUtil.Models
+public class LocationInputType
 {
-    public class LocationInputType
-    {
-        public string Value { get; set; }
-        public bool IsZipCode { get; set; }
-    }
+    public string Value { get; set; }
+    public bool IsZipCode { get; set; }
 }

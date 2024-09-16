@@ -1,10 +1,9 @@
 ﻿using GeoLocUtil.Models;
 using System.Threading.Tasks;
 
-namespace GeoLocUtil.Services
+namespace GeoLocUtil.Services;
+
+public interface IGeocodingService
 {
-    public interface IGeocodingService
-    {
-        Task<BaseResponse> GetCoordinates(LocationInputType location);
-    }
+    Task<BaseResponse> GetCoordinates(LocationInputType location);
 }
