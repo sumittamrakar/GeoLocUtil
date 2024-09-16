@@ -1,4 +1,6 @@
 using GeoLocUtil;
+using GeoLocUtil.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -19,11 +21,15 @@ public class IntegrationTests
         // Assert
         Assert.NotNull(result);
         Assert.True(result.Errors.Count == 0);
+        Assert.IsType<List<GeocodingResponse>>(result.ValidResults);
+
         Assert.Equal(43.074761, result.ValidResults[0].Lat);
         Assert.Equal(-89.3837613, result.ValidResults[0].Lon);
+        Assert.Equal("Wisconsin", result.ValidResults[0].State); // State is returned for City input
 
         Assert.Equal(42.2491, result.ValidResults[1].Lat);
         Assert.Equal(-70.9978, result.ValidResults[1].Lon);
+        Assert.Null(result.ValidResults[1].State); // State is NOT returned for zipcode input
     }
 
     [Theory]

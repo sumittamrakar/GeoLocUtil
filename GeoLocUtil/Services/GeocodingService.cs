@@ -10,11 +10,8 @@ public class GeocodingService : IGeocodingService
     private const string ApiKey = "f897a99d971b5eef57be6fafa0d83239";
     private const string BaseUrl = "http://api.openweathermap.org/geo/1.0/";
 
-    public async Task<BaseResponse> GetCoordinates(LocationInputType location)
-    {
-        var zipEndpoint = $"zip?zip={location.Value}&appid={ApiKey}";
-        var cityStateEndpoint = $"direct?q={location.Value},US&limit=1&appid={ApiKey}"; // TODO: parameterize limit
-
+    public async Task<GeocodingResponse> GetCoordinates(LocationInputType location)
+    {   
         // Create request for getting location information
         var client = new RestClient(BaseUrl);
         RestRequest request;
@@ -23,9 +20,11 @@ public class GeocodingService : IGeocodingService
             // If given zip code, use zip code endpoint otherwise use city state endpoint
             if (location.IsZipCode)
             {
+                var zipEndpoint = $"zip?zip={location.Value}&appid={ApiKey}";
+
                 request = new RestRequest(zipEndpoint, Method.Get);
                 // executing request and deserializing the json response into usable object (GeocodingResponse)
-                var response = await client.ExecuteAsync<ZipResponse>(request);
+                var response = await client.ExecuteAsync<GeocodingResponse>(request);
 
                 if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
                 {
@@ -39,10 +38,11 @@ public class GeocodingService : IGeocodingService
             }
             else
             {
+                var cityStateEndpoint = $"direct?q={location.Value},US&limit=1&appid={ApiKey}";
                 request = new RestRequest(cityStateEndpoint, Method.Get);
 
                 // executing request and deserializing the json response into usable object (GeocodingResponse)
-                var response = await client.ExecuteAsync<CityResponse[]>(request);
+                var response = await client.ExecuteAsync<GeocodingResponse[]>(request);
 
                 if (response.IsSuccessful && response.Data?.Length > 0)
                 {

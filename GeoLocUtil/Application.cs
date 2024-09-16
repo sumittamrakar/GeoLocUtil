@@ -10,7 +10,7 @@ namespace GeoLocUtil;
 
 public class ResultWrapper
 {
-    public List<BaseResponse> ValidResults { get; set; } = new List<BaseResponse>();
+    public List<GeocodingResponse> ValidResults { get; set; } = new List<GeocodingResponse>();
     public List<string> Errors { get; set; } = new List<string>();
 }
 
@@ -56,7 +56,10 @@ public class Application
             {
                 resultWrapper.ValidResults.Add(result);
                 // print results for user
-                Console.WriteLine($" Location: {result.Name}\n Country: {result.Country}\n Latitude: {result.Lat}\n Longitude: {result.Lon}");
+                Console.WriteLine($" Location: {result.Name}" +
+                    $"{(result.State != null ? $"\n State: {result.State}" : string.Empty)}" + // only display State when returns from the API
+                    $"\n Country: {result.Country}" +
+                    $"\n Latitude: {result.Lat}\n Longitude: {result.Lon}");
             }
             else
             {
