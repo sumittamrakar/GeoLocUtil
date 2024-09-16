@@ -5,9 +5,14 @@ using System.Text.RegularExpressions;
 
 namespace GeoLocUtil.Utilities
 {
-    public class InputParser
+    public interface IInputParser
     {
-        public static List<LocationInputType> ParseInputLocations(string[] args)
+        List<LocationInputType> ParseInputLocations(string[] args);
+    }
+
+    public class InputParser : IInputParser
+    {
+        public List<LocationInputType> ParseInputLocations(string[] args)
         {
             var locations = new List<LocationInputType>();
             var zipCodePattern = new Regex(@"^\d{5}$"); // regex pattern to identify ZIP codes)

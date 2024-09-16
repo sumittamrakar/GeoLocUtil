@@ -1,1 +1,0 @@
-﻿This repo contains utility for getting location coordinates from Open Weather Geocoding API.

@@ -5,6 +5,6 @@ namespace GeoLocUtil.Services
 {
     public interface IGeocodingService
     {
-        Task<string> GetCoordinates(LocationInputType location);
+        Task<BaseResponse> GetCoordinates(LocationInputType location);
     }
 }
