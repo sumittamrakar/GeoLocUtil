@@ -47,7 +47,7 @@ GeoLocUtilityTests/
 
 ## Running the Utility
 
-To run the GeoLocUtil command-line utility, from the root directory of the project and run:
+To run the GeoLocUtility command-line utility, from the root directory of the project, run:
 
 > cd GeoLocUtility
 
@@ -58,7 +58,7 @@ To run the GeoLocUtil command-line utility, from the root directory of the proje
 
 ## Running Tests
 
-To run the tests, from the root directory of the project and run:
+To run the tests, from the root directory of the project, run:
 
 > dotnet test
 
