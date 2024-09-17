@@ -66,3 +66,8 @@ To run the tests, from the root directory of the project and run:
     To view available tests without running them, add the `--list-tests` flag:
 
     > dotnet test --list-tests
+
+
+
+## Demo Screen Record
+![](GeoLocUtility_Demo.gif)
