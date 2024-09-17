@@ -1,9 +1,9 @@
-﻿using GeoLocUtil.Models;
+﻿using GeoLocUtility.Models;
 using RestSharp;
 using System;
 using System.Threading.Tasks;
 
-namespace GeoLocUtil.Services;
+namespace GeoLocUtility.Services;
 
 public class GeocodingService : IGeocodingService
 {
@@ -32,7 +32,7 @@ public class GeocodingService : IGeocodingService
                 }
                 else
                 {
-                    Console.WriteLine($"Error: Unable to fetch data from the Geocoding API for zip code {location.Value}. Status Code: {response.StatusCode}");
+                    Console.WriteLine($" Error: Unable to fetch data from the Geocoding API for zip code {location.Value}. Status Code: {response.StatusCode}\n");
                     return null;
                 }
             }
@@ -50,7 +50,7 @@ public class GeocodingService : IGeocodingService
                 }
                 else
                 {
-                    Console.WriteLine($"Error: Unable to fetch data from the Geocoding API for {location.Value}. Status Code: {response.StatusCode}");
+                    Console.WriteLine($" Error: Unable to fetch data from the Geocoding API for {location.Value}. Status Code: {response.StatusCode}\n");
                     return null;
                 }
             }
@@ -58,7 +58,7 @@ public class GeocodingService : IGeocodingService
         catch (Exception e)
         {
             // Handle exceptions
-            Console.WriteLine($"An unexpected error occurred: {e.Message}");
+            Console.WriteLine($" An unexpected error occurred: {e.Message}\n");
             return null;
         }
     }  

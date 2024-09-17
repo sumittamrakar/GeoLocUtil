@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocUtil", "GeoLocUtil\GeoLocUtil.csproj", "{0C05A443-F15F-4DB2-B91F-50DFC709695D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocUtility", "GeoLocUtility\GeoLocUtility.csproj", "{0C05A443-F15F-4DB2-B91F-50DFC709695D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocUtilTests", "GeoLocUtilTests\GeoLocUtilTests.csproj", "{4A131C3D-7BE9-4119-8452-D0044D80574E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocUtilityTests", "GeoLocUtilityTests\GeoLocUtilityTests.csproj", "{4A131C3D-7BE9-4119-8452-D0044D80574E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

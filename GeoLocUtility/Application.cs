@@ -1,12 +1,12 @@
-﻿using GeoLocUtil.Models;
-using GeoLocUtil.Services;
-using GeoLocUtil.Utilities;
+﻿using GeoLocUtility.Models;
+using GeoLocUtility.Services;
+using GeoLocUtility.Utilities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GeoLocUtil;
+namespace GeoLocUtility;
 
 public class ResultWrapper
 {
@@ -25,7 +25,6 @@ public class Application
         _geocodingService = serviceProvider.GetRequiredService<IGeocodingService>();
         _inputParser = serviceProvider.GetRequiredService<IInputParser>();
     }
-
     public async Task<ResultWrapper> Run(string[] args)
     {
         var resultWrapper = new ResultWrapper();
@@ -33,7 +32,7 @@ public class Application
         // if no arguments provided
         if (args == null || args.Length == 0)
         {
-            var errorMessage = $"No data found for location. Please provide location inputs in the form of valid 'city, state' or 'zipcode'.";
+            var errorMessage = $" No data found for location. Please provide location inputs in the form of valid 'city, state' combination or 'zipcode'.\n";
             resultWrapper.Errors.Add(errorMessage);
             Console.WriteLine(errorMessage);
             return resultWrapper;
@@ -43,7 +42,7 @@ public class Application
         if (locations.Count == 0)
         {
             // Add an error message for the empty location
-            var errorMessage = $"No data found for location. Please provide location inputs in the form of valid US 'city, state' combination or 'zipcode'.";
+            var errorMessage = $" No data found for location. Please provide location inputs in the form of valid US 'city, state' combination or 'zipcode'.\n";
             resultWrapper.Errors.Add(errorMessage);
             Console.WriteLine(errorMessage);
         }
@@ -64,7 +63,7 @@ public class Application
             else
             {
                 // Add an error message for the invalid location
-                var errorMessage = $"Error: No data found for location: {location.Value}";
+                var errorMessage = $" Error: No data found for location: {location.Value}\n";
                 resultWrapper.Errors.Add(errorMessage);
                 Console.WriteLine(errorMessage);
             }

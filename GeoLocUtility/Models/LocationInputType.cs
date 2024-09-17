@@ -1,4 +1,4 @@
-﻿namespace GeoLocUtil.Models;
+﻿namespace GeoLocUtility.Models;
 
 public class LocationInputType
 {

@@ -1,10 +1,10 @@
-using GeoLocUtil;
-using GeoLocUtil.Models;
+using GeoLocUtility;
+using GeoLocUtility.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace GeoLocUtilTests;
+namespace GeoLocUtilityTests;
 
 public class IntegrationTests
 {

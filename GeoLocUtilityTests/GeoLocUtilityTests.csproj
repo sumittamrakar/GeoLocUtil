@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeoLocUtil\GeoLocUtil.csproj" />
+    <ProjectReference Include="..\GeoLocUtility\GeoLocUtility.csproj" />
   </ItemGroup>
 
 </Project>

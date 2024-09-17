@@ -1,8 +1,8 @@
-﻿using GeoLocUtil.Models;
+﻿using GeoLocUtility.Models;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace GeoLocUtil.Utilities;
+namespace GeoLocUtility.Utilities;
 
 public interface IInputParser
 {

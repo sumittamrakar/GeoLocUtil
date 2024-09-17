@@ -3,9 +3,29 @@ GeoLocUtil is a command-line utility that retrieves geolocation data using the O
 
 ## Prerequisites
 
-- .NET 8 SDK or later
+- **[.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)** or later
 - An API key for OpenWeatherMap (included in the code by default, but you should replace it with your own for production use)
 - Command line prompt or powershell to execute the provided commands
+
+## Folder Structure
+
+```plaintext
+GeoLocUtility/
+├── GeoLocUtility.csproj    # Project file
+├── Program.cs              # Entry point for the application
+├── Application.cs          # Main application logic and service configuration
+├── Models/
+│   └── GeocodingResponse.cs # Data models for API responses
+├── Services/
+│   └── GeocodingService.cs  # Service to fetch geolocation data from the API
+├── Utilities/
+│   └── InputParser.cs       # Utility to parse user input (city, state, or ZIP code)
+└── README.md             # Project documentation
+
+GeoLocUtilityTests/
+├── GeoLocUtilityTests.csproj # Test project file
+└── IntegrationTests.cs       # Integration tests for geolocation functionality
+```
 
 ## Installation
 
@@ -13,23 +33,28 @@ GeoLocUtil is a command-line utility that retrieves geolocation data using the O
 
     Clone the repository to your local machine.
 
-
 2. **Restore Dependencies**
 
    Navigate to the root directory of the project and run:
-   > dotnet restore
+   
+    > dotnet restore
 
 3. **Build the Project**
 
     After restoring dependencies, build the project using:
+    
     > dotnet build
 
 ## Running the Utility
 
-To run the GeoLocUtil command-line utility, from the GeoLocUtil folder and run:
+To run the GeoLocUtil command-line utility, from the root directory of the project and run:
 
-> cd GeoLocUtil
+> cd GeoLocUtility
+
 > dotnet run "City, State_Code" "zipcode" "Another City, State_Code" "another_zip_code"
+
++ **Example**
+    > dotnet run "Denver, CO" "90210" "New York, NY"
 
 ## Running Tests
 

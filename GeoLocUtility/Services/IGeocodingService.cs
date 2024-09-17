@@ -1,7 +1,7 @@
-﻿using GeoLocUtil.Models;
+﻿using GeoLocUtility.Models;
 using System.Threading.Tasks;
 
-namespace GeoLocUtil.Services;
+namespace GeoLocUtility.Services;
 
 public interface IGeocodingService
 {
