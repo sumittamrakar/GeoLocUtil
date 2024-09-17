@@ -59,7 +59,7 @@ public class Application
                 Console.WriteLine($" Location: {result.Name}" +
                     $"{(result.State != null ? $"\n State: {result.State}" : string.Empty)}" + // only display State when returns from the API
                     $"\n Country: {result.Country}" +
-                    $"\n Latitude: {result.Lat}\n Longitude: {result.Lon}");
+                    $"\n Latitude: {result.Lat}\n Longitude: {result.Lon}\n");
             }
             else
             {

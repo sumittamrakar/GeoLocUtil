@@ -5,6 +5,7 @@ This repo contains a command-line utility that retrieves geolocation data using 
 
 - .NET 8 SDK or later
 - An API key for OpenWeatherMap (included in the code by default, but you should replace it with your own for production use)
+- Clone the repo to your local machine
 - Use command line prompt or powershell to execute the provided commands
 
 ## Installation
@@ -21,6 +22,15 @@ This repo contains a command-line utility that retrieves geolocation data using 
 
 ## Running the Utility
 
-To run the GeoLocUtil command-line utility, from the , use the following syntax:
+To run the GeoLocUtil command-line utility, from the GeoLocUtil folder and run:
 
-dotnet run --locations "City, ST" "ZIP_CODE" "Another City, ST" "ANOTHER_ZIP_CODE"
+> cd GeoLocUtil
+> dotnet run "City, State_Code" "zipcode" "Another City, State_Code" "another_zip_code"
+
+## Running the Tests
+
+To run the tests, from the root directory of the project and run:
+
+> dotnet test
+
+Note: Add `--list-tests` flag to command above to see all the available tests (but not run them).
